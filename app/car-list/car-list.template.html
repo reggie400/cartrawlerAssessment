@@ -1,0 +1,40 @@
+<nav class="cars-navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a href="#!/cars" class="cars-navbar-link"><h3>CarTrawler</h3></a>
+    </div>
+</nav>
+<div class="legend-container col-md-12">
+  <h5 class="legend-text">PickUp Location: {{$ctrl.legend.PickUpLocation['Name']}} | Return Location: {{$ctrl.legend.ReturnLocation['Name']}} <h5>
+  <h5 class="legend-text-time">Pickup Time: {{$ctrl.legend.PickUpDateTime}} | Return Time: {{$ctrl.legend.ReturnDateTime}}<h5>
+</div>
+<h5 class="orderby-filter-label">Sort By</h5><select class="orderby-filter" ng-model="$ctrl.orderProp">
+    <option value="TotalCharge.RateTotalAmount">Price</option>
+    <option value="Vehicle.VehMakeModel['Name']">Model</option>
+    <option value="Vehicle.DoorCount">Doors</option>
+</select>
+<ul class="cars-list-group col-md-12">
+    <li class="car-list-group-item col-md-2" ng-repeat="car in $ctrl.cars | orderBy:$ctrl.orderProp">
+        <span>
+            <h4 class="car-model-title">{{car.Vehicle.VehMakeModel['Name']}}</h4>
+            <h4 class="car-status-title">{{car.Status}}</h4>
+            <a href="#!/cars/{{car.Vehicle.id}}" class="car-image-link">
+                <img class="car-image" ng-src="{{car.Vehicle.PictureURL}}" alt="{{car.Vehicle.VehMakeModel['Name']}}" />
+            </a>
+            <div class="car-details-text">
+                <h5>Transmission: {{car.Vehicle.TransmissionType}}</h5>
+                <h5>Drivetype: {{car.Vehicle.DriveType}}</h5>
+                <h5>Passengers: {{car.Vehicle.PassengerQuantity}}</h5>
+                <h5>Baggage: {{car.Vehicle.BaggageQuantity}}</h5>
+                <h5>AirCon: {{car.Vehicle.AirConditionInd}}</h5>
+                <h5>Doors: {{car.Vehicle.DoorCount}}</h5>
+                <h5>Fuel: {{car.Vehicle.FuelType}}</h5>
+                <h5>Fuel: {{car.Vehicle.Code}}</h5>
+            </div>
+            <div class="misc-details">
+                <h5 class="total-cost-text">Total: {{car.TotalCharge.RateTotalAmount}} ({{car.TotalCharge.CurrencyCode}})</h5>
+                <h6>Vendor: {{car.Vendor.Name}} | vCode: {{car.Vendor.Code}}</h6>
+                <h6>CodeContext: {{car.Vehicle.CodeContext}}</h6>
+            </div>
+        </span>
+    </li>
+</ul>

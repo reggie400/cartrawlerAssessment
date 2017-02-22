@@ -1,0 +1,31 @@
+<nav class="cars-navbar navbar-primary navbar-fixed-top">
+  <div class="container">
+    <a href="#!/cars" class="cars-navbar-link"><h3>CarTrawler</h3></a>  
+ </div>
+</nav>
+<div ng-repeat="c in $ctrl.car" class="car-detail-panel col-md-10">
+  <div class="col-sm-3">
+    <div class="car-detail-box thumbnail">
+     <div class="caption">
+      <h3>{{c[$ctrl.carId].Vehicle.VehMakeModel['Name']}}</h3>
+      <img class="car-detail-image" src="{{c[$ctrl.carId].Vehicle.PictureURL}}" alt="{{c[$ctrl.carId].Vehicle.VehMakeModel['Name']}}">
+      <div class="car-details-text">
+        <h4>Transmission: {{c[$ctrl.carId].Vehicle.TransmissionType}}</h4>
+        <h4>Drivetype: {{c[$ctrl.carId].Vehicle.DriveType}}</h4>
+        <h4>Passengers: {{c[$ctrl.carId].Vehicle.PassengerQuantity}}</h4>
+        <h4>Baggage: {{c[$ctrl.carId].Vehicle.BaggageQuantity}}</h4>
+        <h4>AirCon: {{c[$ctrl.carId].Vehicle.AirConditionInd}}</h4>
+        <h4>Doors: {{c[$ctrl.carId].Vehicle.DoorCount}}</h4>
+        <h4>Fuel: {{c[$ctrl.carId].Vehicle.FuelType}}</h4>
+        <h4>Fuel: {{c[$ctrl.carId].Vehicle.Code}}</h4>
+        </div>
+          <div class="misc-details">
+          <h3 class="total-cost-text">Total: {{c[$ctrl.carId].TotalCharge.RateTotalAmount}} ({{c[$ctrl.carId].TotalCharge.CurrencyCode}})</h4>
+          <h5>Vendor: {{c[$ctrl.carId].Vendor.Name}} | vCode: {{c[$ctrl.carId].Vendor.Code}}</h5>
+          <h5>CodeContext: {{c[$ctrl.carId].Vehicle.CodeContext}}</h5>
+        </div>
+        <p class="button-container"><a href="#!/cars/booked" class="btn btn-info btn-lg" role="button">Book</a> <a href="#" class="btn btn-default btn-lg" role="button">Back</a></p>
+      </div>
+    </div>
+  </div>
+</div>

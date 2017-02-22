@@ -1,0 +1,98 @@
+body {
+  padding-top: 20px;
+  padding-left:40px;
+}
+/* Cars List Page */
+.cars-navbar {
+  background-color:lightseagreen;
+  height: 42px;
+}
+.cars-navbar-link {
+  color: white;
+  margin-top:-14px;
+  float: right;
+}
+
+.legend-container {
+  padding-top: 45px;
+  margin-left: 15px;
+  width: 90%;
+  background-color:lightgray;
+  height: 70px;
+}
+
+.legend-text {
+  text-align:center;
+  height: 30px;
+  margin-top:-20px;
+}
+.legend-text-time {
+  text-align:center;
+  margin-top:-18px;
+  height: 30px;
+  color: lightcoral;
+}
+.orderby-filter {
+  position: absolute;
+  left:6%;
+  margin-top:76px;
+  z-index: 2;
+}
+.orderby-filter-label {
+  position: absolute;
+  margin-left:1%;
+  margin-top:78px;
+  z-index: 2;
+}
+
+.cars-list-group {
+  margin-top:35px;
+  list-style: none;
+}
+
+.car-status-title {
+  text-align:center;
+  color:darkgreen;
+}
+
+.car-model-title {
+  text-align:center;
+}
+.car-list-group-item {
+  width: 300px;
+  border: 1px solid lightseagreen ;
+}
+.car-image {
+  padding:10px;
+  margin-left: 40px;
+  border-bottom: 2px solid lightcoral
+}
+.car-details-text {
+  text-align:center;
+}
+.misc-details {
+  padding-top:5px;
+  text-align:center;
+}
+.total-cost-text{
+  color:coral;
+  padding-bottom:5px
+}
+/* Car Detail Page*/
+.car-detail-panel {
+  margin-top:60px;
+  left: 38%;
+}
+.car-detail-box {
+  border: 1px solid lightseagreen;
+}
+.car-detail-image {
+  padding:10px;
+  border-bottom: 2px solid lightcoral
+}
+.caption {
+  text-align:center;
+}
+.button-container {
+  padding-top:10px
+}
