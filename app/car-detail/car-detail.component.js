@@ -21,7 +21,7 @@ angular.
                     }
                     return result;
                 }, {});
-            };            
+            };
             let normalizedCarData = _.map(response.data[0].VehAvailRSCore.VehVendorAvails, (item) => {
                 const normalizedJSON = _.map(item.VehAvails, (key) => {
                     key.Vehicle.id = id++;
@@ -31,7 +31,6 @@ angular.
                     const TotalCharge = key.TotalCharge;
                     return { Vehicle, TotalCharge, Vendor, Status };
                 });
-                // console.log('NORMALIZED JSON' + JSON.stringify(normalizedJSON));
                 return normalizedJSON;
             });
             return self.car = [removeAtSymbols(_.flatten(normalizedCarData))]
